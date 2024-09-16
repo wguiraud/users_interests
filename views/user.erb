@@ -1,0 +1,34 @@
+<!doctype html>
+<header>
+   
+  <% if params[:user_name] == "nora" %>
+    <a class="emoji-link" href="/users">🐿️</a>
+  <% elsif params[:user_name] == "jamy" %>
+    <a class="emoji-link" href="/users">🐊</a>
+  <% elsif params[:user_name] == "hiroko" %>
+    <a class="emoji-link" href="/users">🐌</a>
+  <% elsif params[:user_name] == "william" %>
+    <a class="emoji-link" href="/users">🦫</a>
+  <% end %>
+
+  <h2><%= params[:user_name].capitalize %><h2>
+</header>
+
+<p>
+  <strong>Email: </strong><%= @user_email %><br>
+  <strong>Interests: </strong><%= comma_separated_interests(@user_interests) %>
+</p>
+
+<ul>
+  <% other_users(params[:user_name]).each do |username, _| %>
+    <li>
+      <a href="/<%= username %>">
+        <%= username.capitalize %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+<footer>
+  <p><i>There are</i> <%= @users.size %> <i>users with a total of</i> <%= count_interests %> <i>interests.</i></p>
+</footer>

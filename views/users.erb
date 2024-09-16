@@ -1,0 +1,18 @@
+<!doctype html>
+<header>
+  <a class="emoji-link" href="/users">&#128029;</a>
+  <h2>Users and Interests</h2>
+</header>
+<ul>
+  <% @users.keys.each do |name| %>
+    <li class="container custom-list">
+      <h4>
+        <a href="/<%= name %>"><%= name.capitalize %></a>
+      </h4>
+    </li>
+  <% end %>
+</ul>
+
+<footer>
+  <p>@Bumblebee's studio:  &#128029;</p>
+</footer>

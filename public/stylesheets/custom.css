@@ -1,0 +1,24 @@
+/* public/stylesheets/custom.css */
+header {
+    position: relative;
+    padding: 10px;
+    background-color: black;
+    text-align: right;
+}
+
+.emoji-link {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 54px; /* Adjust the size as needed */
+    text-decoration: none;
+    color: inherit; /* Inherit the text color from the header */
+}
+
+.container {
+    text-align: center;
+}
+
+.custom-list {
+    list-style-type: none; /* Change to square bullets */
+}
