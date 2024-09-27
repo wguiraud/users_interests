@@ -12,7 +12,7 @@ helpers do
   end
 
   def other_users(current_user_name)
-    @users.reject { |username| username == current_user_name.to_sym } 
+    @users.reject { |username| username == current_user_name.to_sym }
   end
 
   def count_interests
@@ -21,7 +21,7 @@ helpers do
 
 end
 
-get "/" do 
+get "/" do
   redirect "/users" 
 end
 
@@ -33,6 +33,5 @@ get "/:user_name" do
   user_name = params[:user_name].to_sym
   @user_email = @users[user_name][:email]
   @user_interests = @users[user_name][:interests]
-
   erb :user
 end
